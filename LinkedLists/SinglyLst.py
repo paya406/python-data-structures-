@@ -51,6 +51,14 @@ class Slist:
             newNode.next = currentNode.next
             currentNode.next = newNode
             self.count += 1
+    # generator function
+    def gen(self):
+        currentNode = self.head
+        while(currentNode != None):
+            yield currentNode
+            currentNode = currentNode.next
+
+        
 
 
 
@@ -70,8 +78,8 @@ def main():
         currentNode = currentNode.next
     print(" None")
     print(myList.count)
-
-
+    for i in myList.gen():
+        print(i.data)
 
 if __name__ == "__main__":
     main()
