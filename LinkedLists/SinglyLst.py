@@ -58,6 +58,14 @@ class Slist:
             yield currentNode
             currentNode = currentNode.next
 
+    #search function
+    def search(self,item):
+        for i in self.gen():
+            if i.data == item:
+                return True
+            
+        return False
+
         
 
 
@@ -78,8 +86,8 @@ def main():
         currentNode = currentNode.next
     print(" None")
     print(myList.count)
-    for i in myList.gen():
-        print(i.data)
+    print(myList.search(5))
+    print(myList.search(100))
 
 if __name__ == "__main__":
     main()
