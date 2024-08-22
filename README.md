@@ -1,2 +1,2 @@
-# classic_asteroid_game
-This repository contains my remake of the classic asteroid game in python using the pygame library. 
+# Python Data structures 
+This repository contains my implementation of common data strucers used in programming.
