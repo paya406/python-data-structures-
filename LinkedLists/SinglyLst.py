@@ -65,6 +65,26 @@ class Slist:
                 return True
             
         return False
+    def delete(self,index: int):
+        assert index >=0, "index can not be less than 0"
+        assert index <= self.count, "index out of bounds"
+        if self.head == None:
+            print("empty list")
+            return
+
+        if index == 0:
+            self.head = self.head.next
+            self.count -=1
+        else:
+            currentNode = self.head
+            for i in range(0, index - 2):
+                currentNode = currentNode.next
+
+            currentNode.next = currentNode.next.next
+            self.count -=1
+
+
+
 
         
 
@@ -79,7 +99,7 @@ def main():
     myList.addNodeI(23,4)
     myList.addNodeI(56,0)
     myList.addNodeI(90,13)
-
+    
     currentNode = myList.head
     for i in range(0,myList.count):
         print(f" {currentNode.data} =>",end ='')
@@ -88,6 +108,15 @@ def main():
     print(myList.count)
     print(myList.search(5))
     print(myList.search(100))
-
+    
+    myList.delete(0)
+    myList.delete(13)
+    currentNode = myList.head 
+    for i in range(0,myList.count):
+        print(f" {currentNode.data} =>",end ='')
+        currentNode = currentNode.next
+    print(" None")
+    
+    
 if __name__ == "__main__":
     main()
