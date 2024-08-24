@@ -65,6 +65,7 @@ class Slist:
                 return True
             
         return False
+    #delete node at given index
     def delete(self,index: int):
         assert index >=0, "index can not be less than 0"
         assert index <= self.count, "index out of bounds"
@@ -73,8 +74,7 @@ class Slist:
             return
 
         if index == 0:
-            self.head = self.head.next
-            self.count -=1
+                self.head = self.head.next
         else:
             currentNode = self.head
             for i in range(0, index - 2):
